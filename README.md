@@ -26,5 +26,24 @@ Il est possible de travailler sur ce programme indépendement de [theses-docker]
 docker build . -t theses-batch-indexation-sample:local
 
 # execution du conteneur (remplacer 'xxxxxx' par le mot de passe du user 'elastic')
-docker run --rm -it --net=host -e ELASTICSEARCH_PASSWORD=xxxxxx -e ELASTICSEARCH_HOST=127.0.0.1:10302 theses-batch-indexation-sample:local
+docker run --rm -it --net=host \
+  -e ELASTICSEARCH_PASSWORD=xxxxxx \
+  -e ELASTICSEARCH_HOST=127.0.0.1:10302 \
+  --name=theses-batch-indexation-sample-conteneur \
+  theses-batch-indexation-sample:local
+```
+
+Pour régénérer les dumps, vous pouvez procéder comme ceci :
+```bash
+# 1. lancer le conteneur dans un onglet, cf commande ci-dessus
+# 2. regénérer les dumps de cette manière :
+docker exec -it theses-batch-indexation-sample-conteneur personnes-sample-dump.sh
+docker exec -it theses-batch-indexation-sample-conteneur theses-sample-dump.sh
+# 3. copier les dumps générés en local pour pouvoir les commit/push sur git si souhaité
+docker cp theses-batch-indexation-sample-conteneur:/app/personnes-sample-data.json ./personnes-sample-data.json
+docker cp theses-batch-indexation-sample-conteneur:/app/personnes-sample-mapping.json ./personnes-sample-mapping.json
+docker cp theses-batch-indexation-sample-conteneur:/app/recherche_personnes-sample-data.json ./recherche_personnes-sample-data.json
+docker cp theses-batch-indexation-sample-conteneur:/app/recherche_personnes-sample-mapping.json ./recherche_personnes-sample-mapping.json
+docker cp theses-batch-indexation-sample-conteneur:/app/theses-sample-mapping.json ./theses-sample-mapping.json
+docker cp theses-batch-indexation-sample-conteneur:/app/theses-sample-data.json ./theses-sample-data.json
 ```
