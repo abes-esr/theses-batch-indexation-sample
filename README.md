@@ -36,7 +36,7 @@ docker run --rm -it --net=host \
 Pour régénérer les dumps, vous pouvez procéder comme ceci :
 ```bash
 # 1. lancer le conteneur dans un onglet, cf commande ci-dessus
-# 2. regénérer les dumps de cette manière :
+# 2. regénérer les dumps de cette manière (ils seront stockés dans le conteneur)
 docker exec -it theses-batch-indexation-sample-conteneur personnes-sample-dump.sh
 docker exec -it theses-batch-indexation-sample-conteneur theses-sample-dump.sh
 # 3. copier les dumps générés en local pour pouvoir les commit/push sur git si souhaité
