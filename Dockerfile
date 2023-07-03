@@ -2,7 +2,7 @@
 # qui permet de mettre à dispo la ligne de commande elasticdump
 FROM elasticdump/elasticsearch-dump:v6.103.0
 
-# curl : pour l'interaction avec l'API d'elasticsearch
+# curl : pour l'interaction avec l'API d'elasticsearch (exn particulier pour supprimer des indexes)
 # jq : pour manipuler les JSON, en particulier pour retirer les nested du dump de l'index 'personnes'
 RUN apt update && apt install -y jq curl
 
