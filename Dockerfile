@@ -3,7 +3,7 @@
 FROM elasticdump/elasticsearch-dump:v6.103.0
 
 # curl : pour l'interaction avec l'API d'elasticsearch
-# jq : pour manipuler les JSON
+# jq : pour manipuler les JSON, en particulier pour retirer les nested du dump de l'index 'personnes'
 RUN apt update && apt install -y jq curl
 
 # données et scripts de :
