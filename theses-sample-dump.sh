@@ -8,7 +8,7 @@ echo "-> Dump du mapping depuis l'index theses_test de prod"
 NODE_TLS_REJECT_UNAUTHORIZED=0 elasticdump \
     --input=https://elastic:${ELASTICSEARCH_PASSWORD}@diplotaxis1-prod.v102.abes.fr:10302/theses_test \
     --output=/app/theses-sample-mapping.json \
-    --type=mapping
+    --type=index
 
 
 echo "-> Dump des 11 theses depuis l'index theses_test de prod"

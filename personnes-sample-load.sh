@@ -15,13 +15,13 @@ NODE_TLS_REJECT_UNAUTHORIZED=0 elasticdump \
   --input=/app/personnes-sample-mapping.json \
   --output-index=personnes-sample \
   --output=https://elastic:${ELASTICSEARCH_PASSWORD}@${ELASTICSEARCH_HOST}/ \
-  --type=mapping
+  --type=index
 echo "-> Chargement du mapping de l'index recherche_personnes-sample dans elasticsearch"
 NODE_TLS_REJECT_UNAUTHORIZED=0 elasticdump \
   --input=/app/recherche_personnes-sample-mapping.json \
   --output-index=recherche_personnes-sample \
   --output=https://elastic:${ELASTICSEARCH_PASSWORD}@${ELASTICSEARCH_HOST}/ \
-  --type=mapping
+  --type=index
 
 
 echo "-> Chargement des documents dans l'index personnes-sample d'elasticsearch"

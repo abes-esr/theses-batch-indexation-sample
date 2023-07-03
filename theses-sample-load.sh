@@ -10,7 +10,7 @@ NODE_TLS_REJECT_UNAUTHORIZED=0 elasticdump \
   --input=/app/theses-sample-mapping.json \
   --output-index=theses-sample \
   --output=https://elastic:${ELASTICSEARCH_PASSWORD}@${ELASTICSEARCH_HOST}/ \
-  --type=mapping
+  --type=index
 
 echo "-> Chargement des documents dans l'index theses-sample d'elasticsearch"
 NODE_TLS_REJECT_UNAUTHORIZED=0 elasticdump \
