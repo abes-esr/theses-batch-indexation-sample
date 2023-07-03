@@ -11,3 +11,10 @@ Ce script est automatiquement lancé au démarrage de theses-docker. Il va se ch
 Ces trois indexes permettent de faire fonctionner [theses-docker](https://github.com/abes-esr/theses-docker) en toute indépendance du SI de l'Abes et en particulier la base de données Oracle contenant les TEF des thèses (métadonnées XML).
 
 Ce programme utilise l'outil [elasticsearch-dump](https://github.com/elasticsearch-dump/elasticsearch-dump)https://github.com/elasticsearch-dump/elasticsearch-dump et jq pour générer les dumps et pour charger les dumps.
+
+## Paramètres
+
+Les paramètres suivants sont attendus sous forme de variable d'environnement passés au conteneur docker :
+- `ELASTICSEARCH_PASSWORD` : le mot de passe correspondant au user `elastic`
+- `ELASTICSEARCH_HOST` : le hostname+port de l'instance elasticsearch, par exemple pour une instance locale : `127.0.0.1:10302` 
+
