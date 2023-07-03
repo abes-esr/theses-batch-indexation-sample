@@ -37,8 +37,8 @@ Pour régénérer les dumps, vous pouvez procéder comme ceci :
 ```bash
 # 1. lancer le conteneur dans un onglet, cf commande ci-dessus
 # 2. regénérer les dumps de cette manière (ils seront stockés dans le conteneur)
-docker exec -it theses-batch-indexation-sample-container personnes-sample-dump.sh
-docker exec -it theses-batch-indexation-sample-container theses-sample-dump.sh
+docker exec -it theses-batch-indexation-sample-container /app/personnes-sample-dump.sh
+docker exec -it theses-batch-indexation-sample-container /app/theses-sample-dump.sh
 # 3. copier les dumps générés en local pour pouvoir les commit/push sur git si souhaité
 docker cp theses-batch-indexation-sample-container:/app/personnes-sample-data.json ./personnes-sample-data.json
 docker cp theses-batch-indexation-sample-container:/app/personnes-sample-mapping.json ./personnes-sample-mapping.json
