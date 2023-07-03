@@ -16,4 +16,4 @@ NODE_TLS_REJECT_UNAUTHORIZED=0 elasticdump \
     --input=https://elastic:${ELASTICSEARCH_PASSWORD}@diplotaxis1-prod.v102.abes.fr:10302/theses_test \
     --output=/app/theses-sample-data.json \
     --type=data \
-    --searchBody="{\"query\":{\"ids\":{\"values\":[\"2003MON30025\",\"2015TOU20116\",\"2011AIX10218\",\"2001MNHN0022\",\"2020TOU20084\",\"2014TOU20047\",\"2003PA100181\",\"2000PA010697\",\"2014TOU20035\",\"2012PA010501\",\"2020PA100137\"]}}}"
+    --searchBody="{\"query\":{\"ids\":{\"values\":[\"2003MON30025\",\"2015TOU20116\",\"2011AIX10218\",\"2001MNHN0022\",\"2020TOU20084\",\"2014TOU20047\",\"2003PA100181\",\"2000PA010697\",\"2014TOU20035\",\"2012PA010501\",\"2020PA100137\",\"2022UPASG066\",\"2009NAN10089\"]}}}"
