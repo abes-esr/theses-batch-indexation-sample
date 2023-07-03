@@ -18,3 +18,13 @@ Les paramètres suivants sont attendus sous forme de variable d'environnement pa
 - `ELASTICSEARCH_PASSWORD` : le mot de passe correspondant au user `elastic`
 - `ELASTICSEARCH_HOST` : le hostname+port de l'instance elasticsearch, par exemple pour une instance locale : `127.0.0.1:10302` 
 
+## Développement
+
+Il est possible de travailler sur ce programme indépendement de [theses-docker](https://github.com/abes-esr/theses-docker) de cette manière :
+```bash
+# build de l'image docker en local
+docker build . -t theses-batch-indexation-sample:local
+
+# execution du conteneur (remplacer 'xxxxxx' par le mot de passe du user 'elastic')
+docker run --rm -it --net=host -e ELASTICSEARCH_PASSWORD=xxxxxx -e ELASTICSEARCH_HOST=127.0.0.1:10302 theses-batch-indexation-sample:local
+```
