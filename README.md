@@ -4,7 +4,7 @@
 
 Programme qui permet de charger un jeu de données dans une instance [theses-docker](https://github.com/abes-esr/theses-docker) vierge.
 Ce script est automatiquement lancé au démarrage de theses-docker. Il va se charger de créer les 3 indexes suivants :
-- `theses-sample` (qui contient 11 thèses)
+- `theses-sample` (qui contient 13 thèses)
 - `personnes-sample` (qui contient 3 personnes)
 - `recherche_personnes-sample` (qui contient 3 personnes, la même qu'au dessus)
 
